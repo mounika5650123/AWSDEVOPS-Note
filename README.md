@@ -142,7 +142,7 @@ Git Commands::
 All Steps::
 
 HP@DESKTOP-E518Q66 MINGW64 ~/Desktop/Ifocus/AWS
-$ git clone git@github.com:parasa7358/spring-petclinic.git
+$ 
 Cloning into 'spring-petclinic'...
 The authenticity of host 'github.com (20.207.73.82)' can't be established.
 ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
@@ -284,7 +284,6 @@ Add new SSH Key and click Add SSH Key
 Clone Project code using SSH URL::
 ===============================
 
->git clone git@github.com:ifocusbatch2/spring-petclinic.git
 
 ![image](https://github.com/user-attachments/assets/1b704706-cfe5-4db1-8917-e7ca4c44e35f)
 
@@ -340,9 +339,6 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 340 bytes | 340.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To github.com:ifocusbatch2/spring-petclinic.git
-   2aa53f9..b2e46bf  main -> main
-
 HP@DESKTOP-E518Q66 MINGW64 ~/Desktop/Ifocus/batch2_17/spring-petclinic (main)
 $ git checkout -b feature/2025.03.17
 Switched to a new branch 'feature/2025.03.17'
@@ -397,9 +393,6 @@ remote:
 remote: Create a pull request for 'feature/2025.03.17' on GitHub by visiting:
 remote:      https://github.com/ifocusbatch2/spring-petclinic/pull/new/feature/2025.03.17
 remote:
-To github.com:ifocusbatch2/spring-petclinic.git
- * [new branch]      feature/2025.03.17 -> feature/2025.03.17
-
 
 
 
@@ -483,7 +476,7 @@ error: pathspec 'feature/2025.02.27' did not match any file(s) known to git
 
 HP@DESKTOP-E518Q66 MINGW64 ~/Desktop/A/spring-petclinic (main)
 $ git pull
-From github.com:parasa7358/spring-petclinic
+
  * [new branch]      feature/2025.02.27 -> origin/feature/2025.02.27
 Already up to date.
 
@@ -584,7 +577,6 @@ Compressing objects: 100% (9/9), done.
 Writing objects: 100% (13/13), 1.14 KiB | 233.00 KiB/s, done.
 Total 13 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
-To github.com:parasa7358/spring-petclinic.git
    ed57c5e..80681f1  feature
 
 
@@ -2250,9 +2242,6 @@ select Pipeline Definition, Pipeline Script from SCM
 
 ![image](https://github.com/user-attachments/assets/860034d7-dc7e-4562-94d6-99817365057d)
 
-Provided github project url
-
-https://github.com/jaiswaladi246/Petclinic.git
 
 
 ![image](https://github.com/user-attachments/assets/dcd4d9b5-5817-4312-851f-ea66d145770e)
