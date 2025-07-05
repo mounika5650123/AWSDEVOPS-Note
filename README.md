@@ -116,7 +116,7 @@ Git Commands::
 
 >git clone <repo url>
 
->git clone https://github.com/parasa7358/spring-petclinic.git
+>git clone 
 >
 
 >![image](https://github.com/user-attachments/assets/e8b7464b-069e-43ed-b372-86ddd7a730c4)
@@ -1131,7 +1131,7 @@ i created 3 free style project in jenkins
 Project-A ::
 ==============
 
-Github URL::: https://github.com/parasa7358/spring-petclinic.git
+
 
 ![image](https://github.com/user-attachments/assets/e8073061-b815-4945-bd7f-c20b3a6576e2)
 
@@ -1142,7 +1142,7 @@ Post Build Action , select the option Build Other Project  Project-B
 Project -B ::
 =============
 
-Github URL:::https://github.com/parasa7358/onlinebookstore.git
+
 
 ![image](https://github.com/user-attachments/assets/2ee62e92-e677-4717-93be-77d6dd1ecbf9)
 
@@ -1155,7 +1155,7 @@ Project-C::
 ============
 
 
-Github URL:::https://github.com/parasa7358/game-of-life.git
+
 
 Discard old builds:::
 ====================
@@ -1187,16 +1187,7 @@ I'm going to created one free style job and configured Post-build Actions
 
 In post build Action select the option Archive the artifacts
 
->target/*.war  OR target/*.jar  OR target/*.zip  OR target/*.ear
 
-![image](https://github.com/user-attachments/assets/39dcf26d-74ee-4c7f-bc28-bb7f6116fedb)
-
-In post build Action select the option Publish JUnit test result report for to published the test results
-
->target/surefire-reports/*.xml
-
-
-![image](https://github.com/user-attachments/assets/e04f371d-b684-406b-9210-50fb74b6ea79)
 
 I want to show test results ::
 =================================
@@ -1339,7 +1330,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'feature/2025.02.27', url: 'git@github.com:parasa7358/spring-petclinic.git'
+                
             }
         }
         stage('Build') {
@@ -1411,7 +1402,7 @@ node {
 
         node {
         stage('Clone') {
-                git branch: 'master', url: 'https://github.com/parasa7358/onlinebookstore.git'
+               
 			}
 			
 			 stage('Build') {
@@ -1451,7 +1442,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'git@github.com:parasa7358/spring-petclinic.git'
+               
             }
         }
         stage('Build') {
@@ -1514,7 +1505,7 @@ node {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'git@github.com:parasa7358/spring-petclinic.git'
+             
             }
         }
         stage('Build') {
@@ -1637,22 +1628,6 @@ Make sure Tomcat is set up to allow Jenkins to deploy the application by editing
 
 https://stackoverflow.com/questions/7763560/401-unauthorized-error-while-logging-in-manager-app-of-tomcat
 
-tomcat-users.xml file::
-=========================
-
-![image](https://github.com/user-attachments/assets/61a0b6ae-1e6c-47d0-8852-b226d65f38a4)
-
-
-
-  <role rolename="manager-gui"/>
-  <role rolename="manager-script"/>
-  <role rolename="manager-jmx"/>
-  <role rolename="manager-status"/>
-  <role rolename="admin-gui"/>
-  <role rolename="admin-script"/>
-  <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status, admin-gui, admin-script"/>
-
-
 
 
 Restart Tomcat to apply the changes.
@@ -1719,8 +1694,6 @@ at Build step select the Execute shell
 
 
 
-> git clone https://github.com/parasa7358/spring-petclinic.git
-
 > cd spring-petclinic
 
 > mvn install
@@ -1772,7 +1745,7 @@ stage('Git checkout'){
 
     steps{
 
-        git branch: 'main' url: 'https://github.com/parasa7358/Petclinic.git'
+     
 
     }
 }
@@ -1865,8 +1838,6 @@ stages{
 stage('Git checkout'){
 
     steps{
-
-        git branch: 'feature/2025.03.12', url: 'https://github.com/parasa7358/Petclinic.git'
 
     }
 }
@@ -2144,7 +2115,6 @@ stage('Git checkout'){
 
     steps{
 
-        git branch: 'main', url: 'https://github.com/parasa7358/Petclinic.git'
 
     }
 }
@@ -2316,7 +2286,7 @@ pipeline{
        stage('clone the project'){
         steps{
             
-           git branch: 'main', url: 'https://github.com/jaiswaladi246/Petclinic.git'
+       
           
         }
 
@@ -2347,18 +2317,6 @@ pipeline{
         }
 
        }
-
-     stage('Sonarqube Analysis'){
-        steps{
-           sh "mvn clean verify sonar:sonar \
-         -Dsonar.projectKey='spring-petclinic' \
-         -Dsonar.projectName='spring-petclinic' \
-         -Dsonar.host.url='http://localhost:9000' \
-         -Dsonar.token=sqp_b678f83ca558a3bb7735efadfdbd4697adbebc28"
-        }
-
-       }
-    
 
        stage('Deploy to Tomcat Server'){
         steps{
@@ -2466,26 +2424,7 @@ https://releases.jfrog.io/artifactory/bintray-artifactory/
 Jfrog Script::
 ===============
 
-stage ('Artifactory Server'){
-            steps {
-               rtServer (
-                 id: "Artifactory",
-                 url: 'http://localhost:8081/artifactory',
-                 username: 'admin',
-                  password: 'password',
-                  bypassProxy: true,
-                   timeout: 300
-                        )
-            }
-        }
-        stage('Upload'){
-            steps{
-                rtUpload (
-                 serverId:"Artifactory" ,
-                  spec: '''{
-                   "files": [
-                      {
-                      "pattern": "*.war",
+
                       "target": "ifocus-solutions-pvt-ltd"
                       }
                             ]
@@ -2572,7 +2511,7 @@ pipeline{
        stage('clone the project'){
         steps{
             
-           git branch: 'main', url: 'https://github.com/jaiswaladi246/Petclinic.git'
+    
           
         }
 
@@ -2615,18 +2554,7 @@ pipeline{
 
        }
     
-    stage ('Artifactory Server'){
-            steps {
-               rtServer (
-                 id: "Artifactory",
-                 url: 'http://localhost:8081/artifactory',
-                 username: 'admin',
-                  password: 'password',
-                  bypassProxy: true,
-                   timeout: 300
-                        )
-            }
-        }
+    
 
 stage('Upload'){
             steps{
